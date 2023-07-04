@@ -47,7 +47,12 @@ const School = () => {
                <ul>
                   {data?.dataList?.map((curElem) => {
                      console.log(curElem);
-                     return <li onClick={() => dispatch(addId(curElem?.schoolobj?.id))}>{curElem?.schoolobj?.schoolName}</li>
+                     return (
+                     <div style={{display:"flex", alignItems:"center", fontSize:"1.5rem"}}>
+                        <li className={data.activeId===curElem.schoolobj.id? "schoolList active": "schoolList"} onClick={() => dispatch(addId(curElem?.schoolobj?.id))}>{curElem?.schoolobj?.schoolName}</li>
+                        <AiOutlineEdit/> <AiOutlineDelete/>
+                        </div>
+                        )
                   })}
                </ul>
             </div>

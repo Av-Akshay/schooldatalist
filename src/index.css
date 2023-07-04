@@ -1,1 +1,18 @@
-
+.schoolList{
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 0.3rem ;
+    margin: 0.5rem 0;
+    border: 2px solid black ;
+    cursor: pointer;
+    transition: all 0.2s linear;
+}
+.schoolList:hover{
+    color: blue;
+    border-color: blue;
+}
+.active{
+    color: blue;
+    border-color: blue;
+}
