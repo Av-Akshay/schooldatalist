@@ -1,17 +1,18 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-// import App from './App';
-import { Provider } from 'react-redux';
-import School from './School';
-import { PersistGate } from 'redux-persist/integration/react';
-import {persistor,store} from "./store"
+import React from "react";
+import { Provider } from "react-redux";
+import ReactDOM from "react-dom/client";
+import { PersistGate } from "redux-persist/integration/react";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+import "./index.css";
+
+import School from "./School";
+import { persistor, store } from "./store";
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <PersistGate  persistor={persistor}>
+      <PersistGate persistor={persistor}>
         {/* <App /> */}
         <School />
       </PersistGate>
