@@ -26,7 +26,6 @@ const addSchoolData = (state = initialState, action) => {
           ],
         };
       }
-      break;
     case "ADD_ID":
       return {
         ...state,
