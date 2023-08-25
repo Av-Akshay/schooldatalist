@@ -15,7 +15,7 @@
   padding: 10px;
 }
 .container {
-  width: 18%;
+  width: 20%;
 }
 .schoolForm {
   display: flex;
@@ -110,11 +110,15 @@
   align-items: center;
 }
 .listSection {
-  width: 82%;
+  width: 80%;
 }
 .heading {
   margin: 0 auto;
   width: 90%;
+  color: white;
+  text-align: center;
+  margin: 0.5rem 0;
+  text-shadow: 5px 5px 5px gray;
 }
 .inputFilds {
   display: flex;
@@ -158,11 +162,6 @@ input {
   font-size: 1rem;
 }
 
-.heading {
-  color: white;
-  text-shadow: 5px 5px 5px gray;
-}
-
 @media (max-width: 1250px) {
   html {
     font-size: 62.5%;
@@ -184,6 +183,8 @@ input {
   .school-list {
     flex-direction: row;
     flex-wrap: wrap;
+    gap: 2rem;
+    list-style-type: none;
   }
   .listSection {
     width: 100%;

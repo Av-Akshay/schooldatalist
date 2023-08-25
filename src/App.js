@@ -89,6 +89,8 @@ const App = () => {
           </ul>
         </div>
       </div>
+      <hr></hr>
+
       {data.activeId ? (
         <div className="listSection">
           <div className="heading">
