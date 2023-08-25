@@ -17,7 +17,6 @@ const initialState = {
 };
 
 export const useSchool = () => {
-  // TODO => fix naming convension addschoolName addbtn, setaddbtn setallInfo
   const [addSchoolName, setaddSchoolName] = useState("");
   const [addBtn, setAddBtn] = useState(true);
   const [toggleBtn, setToggleBtn] = useState(true);
@@ -26,13 +25,12 @@ export const useSchool = () => {
 
   const data = useSelector((store) => store.addSchoolData);
   const fatchingData = data.dataList.filter((item) => {
-    return item?.schoolobj?.id === data.activeId;
+    return item?.schoolobj?.id === data?.activeId;
   });
   const listItem = fatchingData[0]?.schoolobj?.list;
 
   const inputValue = (event) => {
     const { name, value } = event.target;
-    // TODO name olddata
     setAllInfo((olddata) => {
       return {
         ...olddata,

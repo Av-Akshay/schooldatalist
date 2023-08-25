@@ -10,13 +10,23 @@ const initialState = {
 const addSchoolData = (state = initialState, action) => {
   switch (action.type) {
     case "ADD_SCHOOL":
-      return {
-        ...state,
-        dataList: [
-          ...state.dataList,
-          { schoolobj: { schoolName: action.payload, id: uuidv4(), list: [] } },
-        ],
-      };
+      if (action.payload === "") {
+        alert("please enter the school name");
+        return {
+          ...state,
+        };
+      } else {
+        return {
+          ...state,
+          dataList: [
+            ...state.dataList,
+            {
+              schoolobj: { schoolName: action.payload, id: uuidv4(), list: [] },
+            },
+          ],
+        };
+      }
+      break;
     case "ADD_ID":
       return {
         ...state,
@@ -24,20 +34,32 @@ const addSchoolData = (state = initialState, action) => {
       };
 
     case "STUDENT_INFO":
-      return {
-        ...state,
-        dataList: state.dataList.map((curElem) =>
-          curElem.schoolobj.id === state.activeId
-            ? {
-                ...curElem,
-                schoolobj: {
-                  ...curElem.schoolobj,
-                  list: [...curElem.schoolobj.list, action.payload],
-                },
-              }
-            : curElem
-        ),
-      };
+      if (
+        action.payload.name === "" ||
+        action.payload.address === "" ||
+        action.payload.category === "" ||
+        action.payload.class === ""
+      ) {
+        alert("please filled the all input filds first");
+        return {
+          ...state,
+        };
+      } else {
+        return {
+          ...state,
+          dataList: state.dataList.map((curElem) =>
+            curElem.schoolobj.id === state.activeId
+              ? {
+                  ...curElem,
+                  schoolobj: {
+                    ...curElem.schoolobj,
+                    list: [...curElem.schoolobj.list, action.payload],
+                  },
+                }
+              : curElem
+          ),
+        };
+      }
     case "DELETE_LIST_ITEM":
       return {
         ...state,

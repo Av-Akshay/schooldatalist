@@ -1,33 +1,51 @@
+@import url("https://fonts.googleapis.com/css2?family=Edu+SA+Beginner:wght@500;600&family=Roboto+Mono:ital,wght@0,500;1,400&display=swap");
 * {
+  padding: 0;
+  margin: 0;
   box-sizing: border-box;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-family: "Edu SA Beginner", cursive;
+  font-family: "Roboto Mono", monospace;
 }
 
+.box {
+  width: 100%;
+  height: 100vh;
+  background: radial-gradient(white, rgb(194, 245, 247));
+  display: flex;
+  padding: 10px;
+}
+.container {
+  width: 18%;
+}
+.schoolForm {
+  display: flex;
+  gap: 0.5rem;
+  max-width: 1 v5rem;
+}
+.school-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin: 0.8rem 0;
+}
 .schoolList {
   text-decoration: none;
-  text-transform: uppercase;
+  text-transform: capitalize;
   font-weight: 600;
   padding: 0.3rem;
-  margin: 0.5rem 0;
-  border: 2px solid black;
+  border: 1px solid black;
   cursor: pointer;
+  border-radius: 0.5rem;
   transition: all 0.2s linear;
 }
-
-.schoolList:hover {
-  color: blue;
-  border-color: blue;
+.school-list-icons {
+  display: flex;
+  gap: 0.3rem;
+  padding: 0 0.3rem;
 }
-
-.active {
-  color: blue;
-  border-color: blue;
-}
-
 .deleteicon {
   color: red;
-  font-size: 1rem;
+  font-size: 1.2rem;
   transition: all 0.2s linear;
   cursor: pointer;
 }
@@ -35,7 +53,7 @@
   transition: all 0.2s linear;
   cursor: pointer;
   color: green;
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 
 .deleteicon:hover {
@@ -44,6 +62,16 @@
 
 .editicon:hover {
   transform: scale(1.2);
+}
+
+.schoolList:hover {
+  color: rgb(3, 181, 252);
+  border-color: rgb(3, 181, 252);
+}
+
+.active {
+  color: rgb(3, 181, 252);
+  border-color: rgb(3, 181, 252);
 }
 
 .togglebtn {
@@ -63,9 +91,9 @@
 }
 
 .btn {
-  color: blue;
+  color: rgb(3, 181, 252);
   background-color: white;
-  border-color: blue;
+  border-color: rgb(3, 181, 252);
   border-radius: 5px;
   padding: 5px;
   transition: all 0.2s linear;
@@ -77,25 +105,12 @@
   color: white;
   background-color: blue;
 }
-.box {
-  width: 100%;
-  height: 100vh;
-  display: flex;
-}
-.schoolForm {
-  display: flex;
-  gap: 0.5rem;
-}
 .schholListitem {
   display: flex;
   align-items: center;
 }
-.school-list-icons {
-  display: flex;
-  font-size: 1.3rem;
-}
 .listSection {
-  width: 100%;
+  width: 82%;
 }
 .heading {
   margin: 0 auto;
@@ -108,10 +123,11 @@
   justify-content: space-between;
   margin: 0 auto;
   align-items: center;
+  flex-wrap: wrap;
 }
 .listBtn {
   border: none;
-  background: white;
+  background: transparent;
 }
 .toggleHeading {
   width: 100%;
@@ -126,4 +142,62 @@
 .toogleBtn {
   display: flex;
   align-items: center;
+}
+thead {
+  color: rgb(3, 181, 252);
+}
+tbody {
+  color: rgb(0, 0, 2);
+}
+tbody td:last-child {
+  display: flex;
+  gap: 0.3rem;
+}
+input {
+  padding: 0.1rem 0.2rem;
+  font-size: 1rem;
+}
+
+.heading {
+  color: white;
+  text-shadow: 5px 5px 5px gray;
+}
+
+@media (max-width: 1250px) {
+  html {
+    font-size: 62.5%;
+  }
+  .box {
+    flex-direction: column;
+  }
+  .container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .school-data-list {
+    width: 100%;
+    overflow: scroll;
+    height: 15vh;
+  }
+  .school-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .listSection {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .listSection form {
+    width: 100%;
+  }
+  .inputFilds {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
 }
